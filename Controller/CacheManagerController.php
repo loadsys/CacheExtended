@@ -27,7 +27,7 @@ class CacheManagerController extends CacheExtendedAppController {
 	}
 
 	public function admin_clear($config) {
-		Cache::clear($config);
+		Cache::clear(false, $config);
 		$this->Session->setFlash($config . ' cache was cleared', 'default', null, 'success');
 
 		$this->redirect('index');
